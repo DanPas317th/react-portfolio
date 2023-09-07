@@ -1,16 +1,27 @@
-import ListGroup from "./components/ListGroup.tsx";
+import './App.css';
+import avatar from './images/image1.png';
 
-function App(){
+function Button(){
 
-  let items = [
-    'Lviv',
-    'Kyiv',
-    'Rzeszow',
-    'Krakow',
-    'Night City'
-]
-
-  return <div><ListGroup items={items} heading="Cities"/></div>;
+  return (
+    <button type="button" class="btn btn-primary">Button</button>
+  )
 }
 
-export default App;
+const profile = {
+  fname: 'Daniel',
+  lname: 'Pasichnyuk',
+  motto: 'Let me tell you about myself...',
+  image: {avatar},
+}
+
+export default function App(){
+  return (
+    <div className="button">
+    <h1>Hello, I am {profile.fname} {profile.lname}.</h1>
+    <p></p>
+    <img src={avatar} alt="avatar" style={{width: 200, height: 200}} />
+    <Button />
+    </div>
+  )
+}
